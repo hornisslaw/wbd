@@ -145,30 +145,28 @@ public class Atrakcje {
         return listAtrakcje;
     }
 
-    public int insertAtrakcja (Connection conn, Integer idAtrakcja, String dzienAtrakcja,String odAtrakcja,
-                               String doAtrakcja, String nazwaAtrakcja,String opisAtrakcja,
-                               String strefaAtrakcja,String Czyog ){
+    public static int insertAtrakcja(Connection conn, Atrakcje atrakcja, String czyOg) {
         String sql = "INSERT INTO ATRAKCJE (IDATRAKCJA,DZIEN,GODZINAOD,GODZINADO,NAZWA,OPIS,STREFAA,IDOCEANARIUM,CZYOG) values (?,?,?,?,?,?,?,1,?)";
         PreparedStatement stmt;
         Integer res = null;
-        try{
+        try {
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1,idAtrakcja);
-            stmt.setString(2,dzienAtrakcja);
-            stmt.setString(3,odAtrakcja);
-            stmt.setString(4,doAtrakcja);
-            stmt.setString(5,nazwaAtrakcja);
-            stmt.setString(6,opisAtrakcja);
-            stmt.setString(7,strefaAtrakcja);
-            stmt.setString(8,Czyog);
-            res= stmt.executeUpdate();
-        }catch (SQLException exc) {
+            stmt.setInt(1, atrakcja.idAtrakcja);
+            stmt.setString(2, atrakcja.dzienAtrakcja);
+            stmt.setString(3, atrakcja.odAtrakcja);
+            stmt.setString(4, atrakcja.doAtrakcja);
+            stmt.setString(5, atrakcja.nazwaAtrakcja);
+            stmt.setString(6, atrakcja.opisAtrakcja);
+            stmt.setString(7, atrakcja.strefaAtrakcja);
+            stmt.setString(8, czyOg);
+            res = stmt.executeUpdate();
+        } catch (SQLException exc) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error with data retrival.");
-            alert.setContentText("Details: "+ exc.getMessage());
+            alert.setContentText("Details: " + exc.getMessage());
             alert.show();
         }
-        return  res;
+        return res;
     }
 
 
@@ -203,6 +201,67 @@ public class Atrakcje {
 
     }
 
+    public static final class AtrakcjeBuilder {
+        private Integer idAtrakcja;
+        private String dzienAtrakcja;
+        private String odAtrakcja;
+        private String doAtrakcja;
+        private String nazwaAtrakcja;
+        private String opisAtrakcja;
+        private String strefaAtrakcja;
 
+        private AtrakcjeBuilder() {
+        }
 
+        public static AtrakcjeBuilder Atrakcje() {
+            return new AtrakcjeBuilder();
+        }
+
+        public AtrakcjeBuilder withIdAtrakcja(Integer idAtrakcja) {
+            this.idAtrakcja = idAtrakcja;
+            return this;
+        }
+
+        public AtrakcjeBuilder withDzienAtrakcja(String dzienAtrakcja) {
+            this.dzienAtrakcja = dzienAtrakcja;
+            return this;
+        }
+
+        public AtrakcjeBuilder withOdAtrakcja(String odAtrakcja) {
+            this.odAtrakcja = odAtrakcja;
+            return this;
+        }
+
+        public AtrakcjeBuilder withDoAtrakcja(String doAtrakcja) {
+            this.doAtrakcja = doAtrakcja;
+            return this;
+        }
+
+        public AtrakcjeBuilder withNazwaAtrakcja(String nazwaAtrakcja) {
+            this.nazwaAtrakcja = nazwaAtrakcja;
+            return this;
+        }
+
+        public AtrakcjeBuilder withOpisAtrakcja(String opisAtrakcja) {
+            this.opisAtrakcja = opisAtrakcja;
+            return this;
+        }
+
+        public AtrakcjeBuilder withStrefaAtrakcja(String strefaAtrakcja) {
+            this.strefaAtrakcja = strefaAtrakcja;
+            return this;
+        }
+
+        public Atrakcje build() {
+            Atrakcje atrakcje = new Atrakcje();
+            atrakcje.setIdAtrakcja(idAtrakcja);
+            atrakcje.setDzienAtrakcja(dzienAtrakcja);
+            atrakcje.setOdAtrakcja(odAtrakcja);
+            atrakcje.setDoAtrakcja(doAtrakcja);
+            atrakcje.setNazwaAtrakcja(nazwaAtrakcja);
+            atrakcje.setOpisAtrakcja(opisAtrakcja);
+            atrakcje.setStrefaAtrakcja(strefaAtrakcja);
+            return atrakcje;
+        }
+    }
 }
