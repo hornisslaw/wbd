@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+   <children>
+      <Label layoutX="203.0" layoutY="51.0" prefHeight="61.0" prefWidth="195.0" text="OCEANARIUM" textFill="#5185ed">
+         <font>
+            <Font name="Comic Sans MS" size="27.0" />
+         </font>
+      </Label>
+      <TextField layoutX="31.0" layoutY="163.0" prefHeight="37.0" prefWidth="229.0" promptText="Login" />
+      <TextField layoutX="31.0" layoutY="227.0" prefHeight="37.0" prefWidth="229.0" promptText="Password" />
+      <Button fx:id="ZalogPrac" layoutX="118.0" layoutY="297.0" mnemonicParsing="false" onAction="#GoToPracMenu" text="Zaloguj" />
+      <Button fx:id="ButClientContinue" layoutX="386.0" layoutY="163.0" mnemonicParsing="false" onAction="#GoToClientMenu" prefHeight="111.0" prefWidth="128.0" text="Kontynuuj" />
+      <Label layoutX="101.0" layoutY="128.0" prefHeight="17.0" prefWidth="90.0" text="Pracownicy" textFill="#28c0fc">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="406.0" layoutY="119.0" text="Klienci" textFill="#28c0fc">
+         <font>
+            <Font name="Comic Sans MS Bold" size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ButMenuAtrakcje" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuOptionsController">
+   <children>
+      <Button fx:id="butAtrakcja" layoutX="61.0" layoutY="188.0" mnemonicParsing="false" onAction="#GoToAtrakcje" prefHeight="63.0" prefWidth="114.0" text="Atrakcje" />
+      <Button fx:id="ButMenuBilety" layoutX="243.0" layoutY="188.0" mnemonicParsing="false" onAction="#GoToBilety" prefHeight="63.0" prefWidth="114.0" text="Bilety" />
+      <Button fx:id="ButMenuZwierzeta" layoutX="419.0" layoutY="188.0" mnemonicParsing="false" onAction="#GoToOsobniki" prefHeight="63.0" prefWidth="114.0" text="Nasze zwierzeta" />
+      <Button fx:id="exitApp" layoutX="243.0" layoutY="294.0" mnemonicParsing="false" onAction="#exitToDesktop" prefHeight="63.0" prefWidth="114.0" text="Wyjdz" />
+      <Label layoutX="173.0" layoutY="39.0" prefHeight="82.0" prefWidth="254.0" text="Oceanarium" textFill="#006dda">
+         <font>
+            <Font name="Comic Sans MS" size="46.0" />
+         </font>
+      </Label>
+      <Button fx:id="butPowrot" layoutX="61.0" layoutY="294.0" mnemonicParsing="false" onAction="#GoToPowrot" prefHeight="63.0" prefWidth="114.0" text="Powrot" />
+   </children>
+</AnchorPane>
